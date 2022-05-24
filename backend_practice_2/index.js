@@ -67,6 +67,8 @@ app.listen(process.env.PORT,()=>{
 })
 
 // token--    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
+    
+    // removed from frontebd package.josn sript line  -- "build": "react-scripts build",
 
 // ssh SHA256:aleVCB3Q9vuRy0vRtMaW0lQiK8UkXVoAP/XbhlSN08g pratap-bairagi.test@gmail.com
 
