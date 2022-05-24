@@ -48,12 +48,10 @@ app.use("/api", paymentRoute)
 //     res.sendFile(path.resolve(__dirname,"../frontend_1/build/index.html")) // sending one by one file to ui/ frontend
 // })
 
-if(process.env.NODE_ENV){
 app.use(express.static(path.join(__dirname, "../frontend_1/build")))
 app.get("*",(req, res)=>{
     res.sendFile(path.resolve(__dirname,"../frontend_1/build/index.html"))
 })
-}
 
 ///// ye build file ka path yaha set karne ke baad,
 ///// frontend se build folder ko delete kar denge
