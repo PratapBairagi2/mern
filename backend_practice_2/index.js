@@ -49,9 +49,9 @@ app.use("/api", paymentRoute)
 // })
 
 if(process.env.NODE_ENV){
-app.use(express.static("app/frontend_1/build/index.html"))
+app.use(express.static(path.join(__dirname, "../frontend_1/build")))
 app.get("*",(req, res)=>{
-    res.sendFile(path.resolve(__dirname, "app/frontend_1/build", "index.html"))
+    res.sendFile(path.resolve(__dirname,"../frontend_1/build/index.html"))
 })
 }
 

@@ -1,9 +1,0 @@
-
-.reviewBackground{
-    aspect-ratio: 1/.6;
-    box-shadow: 0 0 2px grey;
-    /* background-image: url("./review.png");background-size: cover; */
-    background-position: center;
-    background-repeat: no-repeat;
-
-}
