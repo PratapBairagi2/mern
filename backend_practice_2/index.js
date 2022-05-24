@@ -7,6 +7,7 @@ const globalErrorHandlerMiddleware = require("./middlewares/globalErrorHandling"
 const fileUpload = require("express-fileupload")
 const path = require("path")
 
+
 // import routes
 const productRoute = require("./routes/productRoute")
 const userRoute = require("./routes/userRoute")
@@ -21,7 +22,7 @@ const app = express()
 // production  mode pe heroku khud apna config banata hai
 // isiliye yaha condition ke sath isko rakhenge
 
-if(process.env.NODE_ENV !== "PRODUCTION"){
+if(process.env.NODE_ENV){
     require("dotenv").config({path : "backend_practice_2/config/.env"})
 }
 
@@ -50,7 +51,7 @@ app.use("/api", paymentRoute)
 
 app.use(express.static(path.join(__dirname, "../frontend_1/build")))
 app.get("*",(req, res)=>{
-    res.sendFile(path.resolve(__dirname,"../frontend_1/build/index.html"))
+    res.sendFile(path.resolve(__dirname, "../frontend_1/build/index.html"))
 })
 
 ///// ye build file ka path yaha set karne ke baad,

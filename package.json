@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "engines": {
-    "node": "17.8.0"
+    "node": "17.8.0",
+    "npm" : "8.6.0"
   },
   "main": "backend_practice_2/index.js",
   "scripts": {
