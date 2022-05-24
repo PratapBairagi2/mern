@@ -47,10 +47,14 @@ app.use("/api", paymentRoute)
 // app.get("*", (req, res, next)=>{
 //     res.sendFile(path.resolve(__dirname,"../frontend_1/build/index.html")) // sending one by one file to ui/ frontend
 // })
-app.use(express.static(path.join(__dirname,"../frontend_1/build")))
+
+if(process.env.NODE_ENV){
+app.use(express.static("app/frontend_1/build/index.html"))
 app.get("*",(req, res)=>{
-    res.sendFile(path.resolve(__dirname,"../frontend_1/build/index.html"))
+    res.sendFile(path.resolve(__dirname, "app/frontend_1/build", "index.html"))
 })
+}
+
 ///// ye build file ka path yaha set karne ke baad,
 ///// frontend se build folder ko delete kar denge
 ///// heroku pe host karte hi, heroku khud build folader bana lega
