@@ -5,7 +5,7 @@ const cors = require("cors")
 const cookieParser = require("cookie-parser")
 const globalErrorHandlerMiddleware = require("./middlewares/globalErrorHandling")
 const fileUpload = require("express-fileupload")
-const Path = require("path")
+const path = require("path")
 
 // import routes
 const productRoute = require("./routes/productRoute")
@@ -47,9 +47,9 @@ app.use("/api", paymentRoute)
 // app.get("*", (req, res, next)=>{
 //     res.sendFile(path.resolve(__dirname,"../frontend_1/build/index.html")) // sending one by one file to ui/ frontend
 // })
-app.use(express.static(Path.join(__dirname,"../frontend_1/build")))
+app.use(express.static(path.join(__dirname,"../frontend_1/build")))
 app.get("*",(req, res)=>{
-    res.sendFile(Path.resolve(__dirname,"../frontend_1/build/index.html"))
+    res.sendFile(path.resolve(__dirname,"../frontend_1/build/index.html"))
 })
 ///// ye build file ka path yaha set karne ke baad,
 ///// frontend se build folder ko delete kar denge
