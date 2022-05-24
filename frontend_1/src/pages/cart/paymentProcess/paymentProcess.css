@@ -1,0 +1,9 @@
+
+.CardNumberElement, .CardExpiryElement, .CardCvcElement{
+    /* border: 1px solid red; */
+    width: 100%;
+    min-height: 2rem;
+    padding: 7px 5% 0 5%;
+    /* line-height: 110%; */
+   
+}

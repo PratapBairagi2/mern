@@ -22,7 +22,9 @@ const app = express()
 // production  mode pe heroku khud apna config banata hai
 // isiliye yaha condition ke sath isko rakhenge
 
-if(process.env.NODE_ENV){
+if(process.env.NODE_ENV==="PRODUCTION"){
+    require("dotenv").config({path : "backend_practice_2/config/.env"})
+}else{
     require("dotenv").config({path : "backend_practice_2/config/.env"})
 }
 
