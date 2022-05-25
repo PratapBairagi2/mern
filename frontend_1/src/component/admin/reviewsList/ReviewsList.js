@@ -59,7 +59,6 @@ const ReviewsList = () => {
 
     //  delete review fun
      const deleteReviewFun = (productId, reviewId) =>{
-         console.log(productId, reviewId)
          dispatch(deleteReviewByAdminAction(productId, reviewId))
      }
 
@@ -144,8 +143,7 @@ const ReviewsList = () => {
                                                 
                                                 <li className="col col-2" style={{fontSize:"80%", wordBreak:"break-word", padding:"0 2%"}}>{r.user}</li>
                                                 <li className="col col-2">
-                                                    {console.log(r.rating)}
-                                                    {console.log(v.reviews)}
+                                                    
                                                     <Rating
                                                     value={r.rating > 0 ? r.rating : 0}
                                                     precision={.1}

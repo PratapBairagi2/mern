@@ -12,8 +12,6 @@ const Cart = ({history}) => {
     const dispatch = useDispatch()
     const alert = useAlert()
 
-    console.log(cartItems)
-
     useEffect(()=>{
         if(cartItems){
         var cartTotal = 0

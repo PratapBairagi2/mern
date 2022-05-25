@@ -78,7 +78,6 @@ const OrderList = () => {
                                                 <select multiple style={{padding:" 0 6px", height:"max-content", minHeight:"max-content", outline:"none", border:"none"}}>
                                                     {v.orderItems.map((p,pi)=>{
                                                         return <option value={p._id} style={{display:"flex",  padding:"0 3px", minHeight:"max-content"}} key={pi}>
-                                                            <input type="checkbox" value="" name="" id="" />
                                                             <span style={{margin:"2px 3px"}}>{p.name} </span>
                                                             <span style={{margin:"2px 3px"}}> ₹{p.price}</span>
                                                             <span style={{margin:"2px 3px"}}> X {p.quantity}</span>

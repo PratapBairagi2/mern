@@ -6,7 +6,6 @@ import { NavLink } from "react-router-dom"
 export const PaymentSuccess = () =>{
     // const {order, success, error} = useSelector(state=>state.order)
     // const storedCartItems = localStorage.getItem("cartItems")
-    // console.log(order)
 
     // useEffect(async()=>{
     //     if(order){

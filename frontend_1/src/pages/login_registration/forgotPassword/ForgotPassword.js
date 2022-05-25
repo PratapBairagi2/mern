@@ -11,7 +11,6 @@ const ForgotPassword = ({history}) => {
     const alert = useAlert()
 
     const [email, setEmail] = useState("")
-    console.log(window.location)
 
     const formSubmitHandler =(e)=>{
         e.preventDefault()

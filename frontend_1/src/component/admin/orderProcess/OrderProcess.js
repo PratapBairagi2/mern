@@ -51,7 +51,6 @@ const Orderprocess = () => {
 
     //  change order statu handler 
     const changeStatusHandler = (e) => {
-        console.log(e.target.value)
         setOrderStatus(e.target.value)
     }
 

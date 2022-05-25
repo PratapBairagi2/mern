@@ -118,7 +118,6 @@ const ProductDetails = () => {
 
                         <div className="carousel-inner">
                             {data.product.images.map((p,i)=>{
-                                console.log(p.url)
                                return <div key={i} className={`carousel-item ${i=== 0 && "active"}`}>
                                 <img className="w-100" src={p.url} alt="" />
                                </div>

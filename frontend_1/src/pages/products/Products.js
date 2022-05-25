@@ -22,6 +22,7 @@ import fridge from "./images/reshot-icon-fridge-LT4Y3BWQUP.svg"
 import other from "./images/reshot-icon-idea-question-SYJGL9DWCX.svg"
 import machine from "./images/reshot-icon-machine-WGPZ5EUMLY.svg"
 import noFilter from "./images/noFilter.svg"
+import searchSvg from "./images/search.svg"
 
 
 
@@ -40,7 +41,6 @@ const Products = () => {
     const [currentPage, setCurrentPage] = useState(1)
     const [category, setCategory] = useState("")
     var [ratings, setRatings] = useState(0)
-    const [price, setPrice] = useState({ priceStart: Number(0), priceEnd: Number(99999) })
 
 
     const resultPerPage = data.success ? data.resultPerPage : 0
@@ -53,7 +53,6 @@ const Products = () => {
         setCurrentPage(e)
     }
 
-
     useEffect(() => {
         if (data.error) {
             alert.error(data.error)
@@ -61,9 +60,10 @@ const Products = () => {
         }
 
         dispatch(getProducts(keyword, currentPage, price, category, ratings))
-    }, [dispatch, data.error, keyword, currentPage, category, ratings, alert, price])
+    }, [dispatch, data.error, keyword, currentPage, category, ratings, alert])
 
 
+    const [price, setPrice] = useState({ priceStart: Number(0), priceEnd: Number(99999) })
 
     const priceChangeHandler = (e) => {
         const { name, value } = e.target
@@ -95,7 +95,7 @@ const Products = () => {
     lis.forEach((effect, i) => {
         effect.addEventListener("click", function () {
           
-            if (this.parentElement.lastChild.style.display === "flex") {
+            if (this.parentElement.lastChild.style.display == "flex") {
                 this.parentElement.lastChild.style.display = "none"
                 this.children[1].innerText = "+"
                 this.classList.add("active")
@@ -116,7 +116,7 @@ const Products = () => {
 
     // filter toggle
     const  filterContainerToggleFun = () =>{
-        document.getElementById("filterContainer").style.display ==="flex"?
+        document.getElementById("filterContainer").style.display =="flex"?
          document.getElementById("filterContainer").style.display ="none"
          : 
          document.getElementById("filterContainer").style.display ="flex"
@@ -127,7 +127,7 @@ const Products = () => {
 
             <MetaData title={`PRODUCT SEARCH : ECOMMERCE`} />
 
-            <div className="" style={{ display: "flex", marginTop:"10vh", minHeight:"85vh" , flexDirection:"column"}}>
+            <div className="" style={{ display: "flex", marginTop:"10vh", minHeight:"85vh", height:"max-content" , flexDirection:"column"}}>
 
                 {/* <aside className="aside" style={{ width: "20%", minWidth: "5rem", maxWidth: "7rem",  padding: "0", background:"tomato" }}>
 
@@ -230,8 +230,9 @@ const Products = () => {
         </div>
 
             <div style={{ width: "max-content", margin: "1rem auto" }}>
-                {data.success && resultPerPage < data.filteredProductsCount &&
 
+                {data.success && resultPerPage < data.filteredProductsCount &&
+                
                     <Pagination
                         onChange={currentPageNoHandler}
                         activePage={currentPage}

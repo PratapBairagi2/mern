@@ -41,7 +41,7 @@ const Dashboard = () => {
     return (
         <>
         <MetaData title={`${auth.isAuthenticated && auth.user.name} DASHBOARD : ECOMMERCE`}/>
-                <div className="container-fluid p-md-3 d-flex flex-column" style={{ minHeight: "85vh" }}>
+                <div className="container-fluid p-md-3 d-flex flex-column" style={{ minHeight: "85vh", marginTop:"10vh" }}>
                             
                         <button onClick={logoutUser} className="btn btn-primary mt-1" style={{ width:"max-content", marginLeft:"3.5%" }}>Logout</button>
                     <div className="row justify-content-center py-2" >
