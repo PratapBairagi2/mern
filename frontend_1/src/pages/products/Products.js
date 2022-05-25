@@ -22,7 +22,6 @@ import fridge from "./images/reshot-icon-fridge-LT4Y3BWQUP.svg"
 import other from "./images/reshot-icon-idea-question-SYJGL9DWCX.svg"
 import machine from "./images/reshot-icon-machine-WGPZ5EUMLY.svg"
 import noFilter from "./images/noFilter.svg"
-import searchSvg from "./images/search.svg"
 
 
 
@@ -60,7 +59,7 @@ const Products = () => {
         }
 
         dispatch(getProducts(keyword, currentPage, price, category, ratings))
-    }, [dispatch, data.error, keyword, currentPage, category, ratings, alert])
+    }, [dispatch, data.error, keyword, currentPage, category, ratings, alert, price])
 
 
     const [price, setPrice] = useState({ priceStart: Number(0), priceEnd: Number(99999) })
@@ -95,7 +94,7 @@ const Products = () => {
     lis.forEach((effect, i) => {
         effect.addEventListener("click", function () {
           
-            if (this.parentElement.lastChild.style.display == "flex") {
+            if (this.parentElement.lastChild.style.display === "flex") {
                 this.parentElement.lastChild.style.display = "none"
                 this.children[1].innerText = "+"
                 this.classList.add("active")
@@ -116,7 +115,7 @@ const Products = () => {
 
     // filter toggle
     const  filterContainerToggleFun = () =>{
-        document.getElementById("filterContainer").style.display =="flex"?
+        document.getElementById("filterContainer").style.display ==="flex"?
          document.getElementById("filterContainer").style.display ="none"
          : 
          document.getElementById("filterContainer").style.display ="flex"

@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Loader from "../../../component/loader/Loader";
 import { orderPreviewAction } from "../../../redux/actions/orderAction";
-import im from "./rani.jpg"
 
 const OrderPreview = () => {
     const {id} = useParams()
@@ -14,9 +13,7 @@ const OrderPreview = () => {
         if(id){
         dispatch(orderPreviewAction(id))
         }
-    },[id])
-
-    console.log(order)
+    },[id, dispatch])
 
     return (
 

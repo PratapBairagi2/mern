@@ -27,7 +27,7 @@ const ProgressStep = ({step}) => {
                 })
             }
         }
-    },[ ])
+    },[step, steps ])
 
     return (
         <>

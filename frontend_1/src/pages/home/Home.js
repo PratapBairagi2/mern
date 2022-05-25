@@ -9,7 +9,7 @@ import Loader from "../../component/loader/Loader"
 import {useAlert} from "react-alert"
 import HomeSlide from "./homeSlide"
 import About from "../about/About"
-import { useParams } from "react-router-dom"
+// import { useParams } from "react-router-dom"
 import  Pagination  from "react-js-pagination"
 import Contact from "../contact/Contact"
 
@@ -34,7 +34,7 @@ const Home = () => {
         }
             dispatch(getProducts("",currentPage))
 
-    }, [dispatch, data.error, currentPage])
+    }, [dispatch, data.error, currentPage, alert])
 
     useEffect(()=>{
         if(pro.success){

@@ -34,7 +34,7 @@ const ForgotPassword = ({history}) => {
         if(error){
             alert.error(error)
         }
-    },[loading, error, success])
+    },[loading, error, success, alert, email])
 
     const changeUserDetailsHandle = (e) =>{
         setEmail(e.target.value)

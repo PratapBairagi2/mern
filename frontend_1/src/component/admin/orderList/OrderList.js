@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useAlert } from "react-alert";
@@ -9,7 +9,7 @@ const OrderList = () => {
     const dispatch = useDispatch()
     const history = useHistory()
     const alert = useAlert()
-    const {loading, success, error, orders} = useSelector(state=>state.getAdminOrders)
+    const {loading, orders} = useSelector(state=>state.getAdminOrders)
     const {loading : deleteOrderLoading, success : deleteOrderSuccess, error : deleteOrderError} = useSelector(state=>state.deleteOrderAdmin)
 
 
@@ -24,7 +24,7 @@ const OrderList = () => {
         if(deleteOrderError){
             alert.success(deleteOrderError)
         }
-    },[dispatch, deleteOrderLoading, deleteOrderSuccess, deleteOrderError])
+    },[dispatch, deleteOrderLoading, deleteOrderSuccess, deleteOrderError, alert])
 
     // 
     const updateOrderStatus = (id) => {

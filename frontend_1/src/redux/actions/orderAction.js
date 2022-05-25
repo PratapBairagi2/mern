@@ -20,8 +20,6 @@ export const orederCreateAction = (order) => async(dispatch) =>{
             payload : data
         })
 
-        console.log(data)
-
     } catch (error) {
         dispatch({
             type: ORDER_CREATE_FAIL,
@@ -138,14 +136,11 @@ export const getAdminOrderPreviewAction = (id) => async (dispatch) =>{
 
 // admin order status change -- admin
 export const adminOrderStatusChangeAction = (id, orderStatus) => async(dispatch) =>{
-    console.log(orderStatus)
     try {
         dispatch({
             type : ADMIN_ORDER_STATUS_CHANGE_REQUEST
         })
-        const config = {
-            // headers : { "Content-Type":"application/json" }
-        }
+        
         const {data} = await axios.put(`/api/admin/order/${id}`, {orderStatus})
 
         dispatch({

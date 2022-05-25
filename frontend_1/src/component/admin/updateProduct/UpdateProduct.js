@@ -11,7 +11,7 @@ const UpdateProduct = () => {
     const dispatch = useDispatch()
     const alert = useAlert()
     const history = useHistory()
-    const { loading, success, error, product } = useSelector(state => state.productDetails)
+    const { product } = useSelector(state => state.productDetails)
     const {loading : updateProductLoading , success : updateProductSuccess , error : updateProductError} = useSelector(state=> state.deleteProduct)
 
     const [productDetails, setProductDetails] = useState({
@@ -77,7 +77,7 @@ const UpdateProduct = () => {
 
     useEffect(() => {
         dispatch(getProductDetails(id))
-    }, [dispatch])
+    }, [dispatch, id])
 
     // get all data after deleting/update product
     useEffect(()=>{
@@ -93,7 +93,7 @@ const UpdateProduct = () => {
         if(updateProductError){
             alert.error(updateProductError)
         }
-    },[ updateProductLoading , updateProductSuccess , updateProductError])
+    },[ updateProductLoading , updateProductSuccess , updateProductError, alert, dispatch, history])
 
        // categories 
        const categories = [

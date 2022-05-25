@@ -12,12 +12,12 @@ const Orderprocess = () => {
     const history = useHistory()
     const { loading: adminOrderLoading, success: adminOrderSuccess, error: adminOrderError, order } = useSelector(state => state.getAdminOrder)
 
-    const { loading, success, error } = useSelector(state => state.orderStatus)
+    const {  success, error } = useSelector(state => state.orderStatus)
 
     // get admin order
     useEffect(() => {
         dispatch(getAdminOrderPreviewAction(id))
-    }, [dispatch, success, error])
+    }, [dispatch, success, error, id])
 
     
 
@@ -33,7 +33,7 @@ const Orderprocess = () => {
             dispatch(getAdminOrdersAction())
         }
 
-    }, [success, error])
+    }, [success, error, alert, dispatch, history])
 
 
     useEffect(() => {
@@ -44,7 +44,7 @@ const Orderprocess = () => {
             alert.error(adminOrderError)
             dispatch(cleareError())
         }
-    }, [adminOrderSuccess, adminOrderError, adminOrderLoading])
+    }, [adminOrderSuccess, adminOrderError, adminOrderLoading, alert, dispatch])
 
 
     const [orderStatus, setOrderStatus] = useState("processing")

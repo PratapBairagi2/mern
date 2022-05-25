@@ -1,7 +1,7 @@
-import { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
+// import { useEffect } from "react"
+// import { useDispatch, useSelector } from "react-redux"
 import { NavLink } from "react-router-dom"
-import { removeFromCartAction } from "../../../redux/actions/cartAction"
+// import { removeFromCartAction } from "../../../redux/actions/cartAction"
 
 export const PaymentSuccess = () =>{
     // const {order, success, error} = useSelector(state=>state.order)

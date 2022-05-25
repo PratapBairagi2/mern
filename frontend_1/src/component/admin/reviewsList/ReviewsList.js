@@ -1,4 +1,3 @@
-import axios from "axios";
 import { Fragment, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clearAllError, deleteReviewByAdminAction, GetAllReviewOfAllProductsAction, reset_success } from "../../../redux/actions/reviewAction";
@@ -13,8 +12,8 @@ const ReviewsList = () => {
     const dispatch = useDispatch()
     const alert = useAlert()
     const history = useHistory()
-    const { loading, success, error, reviews } = useSelector(state => state.allProductReviews)
-    const { loading : deleteReviewLoading , success: deleteReviewSuccess, error: deleteReviewError } = useSelector(state => state.deleteReviewAdmin)
+    const { loading, success, reviews } = useSelector(state => state.allProductReviews)
+    const {  success: deleteReviewSuccess, error: deleteReviewError } = useSelector(state => state.deleteReviewAdmin)
 
     
 
@@ -29,12 +28,12 @@ const ReviewsList = () => {
             alert.error(deleteReviewError)
             dispatch(clearAllError())
         }
-    }, [deleteReviewSuccess, deleteReviewError])
+    }, [deleteReviewSuccess, deleteReviewError, alert, dispatch, history])
 
     useEffect(() => {
         dispatch(getProducts())
         dispatch(GetAllReviewOfAllProductsAction("", ""))
-    }, [])
+    }, [dispatch])
 
     const searchReviewFun = (e) => {
         const reviewId = "rgerigherohvo"
@@ -46,14 +45,14 @@ const ReviewsList = () => {
     }
 
     // all reviews of a product
-    const [allReviews, setAllReviews] = useState([])
+    // const [allReviews, setAllReviews] = useState([])
     const showReviewListFun = (id) => {
-        document.getElementById("revs"+id).style.display== "flex" ?  
+        document.getElementById("revs"+id).style.display=== "flex" ?  
         document.getElementById("revs"+id).style.display= "none" :  document.getElementById("revs"+id).style.display= "flex"
 
         const reviewShowToggleId = document.getElementById("reviewShowToggleId"+id)
 
-        reviewShowToggleId.style.transform == "" ? 
+        reviewShowToggleId.style.transform === "" ? 
         reviewShowToggleId.style.transform = "rotateZ(180deg)" :  reviewShowToggleId.style.transform = ""
     }
 

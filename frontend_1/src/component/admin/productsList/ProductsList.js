@@ -10,7 +10,7 @@ const ProductsList = () => {
 
     
     const dispatch = useDispatch()
-    const { loading, success, error, products } = useSelector(state => state.products)
+    const { loading, success, products } = useSelector(state => state.products)
     const { loading: loadingDeleteProduct, success: successDeleteProduct, error: errorDeleteProduct } = useSelector(state => state.deleteProduct)
     const {loading : createProductLoading, success : createProductSuccess, error: createProductError} = useSelector(state=>state.newProduct)
     const alert = useAlert()
@@ -33,7 +33,7 @@ const ProductsList = () => {
             alert.error("something went wring while deleting error, re-login and try !")
         }
         
-    }, [dispatch, successDeleteProduct,errorDeleteProduct,createProductError, createProductSuccess])
+    }, [dispatch, successDeleteProduct,errorDeleteProduct,createProductError, createProductSuccess, alert])
 
     const deleteProductFun = async (e) => {
         const id = e
@@ -105,10 +105,10 @@ const ProductsList = () => {
 
     return (
         <>
-        {loading || loadingDeleteProduct || createProductLoading && <Loader/>}
+        {(loading || loadingDeleteProduct || createProductLoading) && <Loader/>}
         
             <div style={{ height: "94vh", overflowX: "hidden", overflowY: "auto", width: "100%", padding: "2%", display: "flex", flexWrap: "wrap" }}>
-                <div style={{ display: "flex", overflow: "hidden", flexWrap: "wrap", flexWrap: "wrap", width: "max-content", minWidth: "100%", justifyContent: "space-evenly" }}>
+                <div style={{ display: "flex", overflow: "hidden", flexWrap: "wrap", width: "max-content", minWidth: "100%", justifyContent: "space-evenly" }}>
 
                     <div style={{ width: "max-content", minWidth: "100%", overflow: "auto" }}>
                         <table className="table table-responsive" style={{ width: "100%", boxShadow: "0 0 2px grey" }} >

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { passwordUpdateAction, userLoad } from "../../../redux/actions/userActions";
+import { passwordUpdateAction } from "../../../redux/actions/userActions";
 import { useAlert } from "react-alert";
 import MetaData from "../../../component/layout/metadata/MetaData"
 
@@ -40,13 +40,12 @@ const ChangePassword = ({history}) => {
     }
 
     useEffect(()=>{
-        console.log(loading, "===", error, "====",success)
       
         if(error){
             alert.error(error)
         }
         
-    },[loading, error, success, isAuthenticated, dispatch])
+    },[loading, error, success, isAuthenticated, dispatch, alert])
     
     return (
         <>

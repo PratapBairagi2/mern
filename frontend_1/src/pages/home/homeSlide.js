@@ -1,7 +1,7 @@
 import veg from "./images/colorful-veggies-frame-with-copy-space.jpg"
 import shirtRack from "./images/clothing-rack-with-floral-hawaiian-shirts-hangers-hat.jpg"
-import girlShopping from "./images/surprised-girl-pink-culottes-posing-with-trolley-full-multi-colored-packages-with-new-clothes.jpg"
-import shop from "./images/front-view-woman-with-shopping-bag-concept.jpg"
+// import girlShopping from "./images/surprised-girl-pink-culottes-posing-with-trolley-full-multi-colored-packages-with-new-clothes.jpg"
+// import shop from "./images/front-view-woman-with-shopping-bag-concept.jpg"
 import shirts from "./images/hawaiian-shirts-with-floral-print-hangers.jpg"
 
 const HomeSlide = () => {

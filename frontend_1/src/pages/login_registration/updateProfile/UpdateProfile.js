@@ -4,11 +4,11 @@ import MetaData from "../../../component/layout/metadata/MetaData"
 import { clearAllError, updateProfileAction, userLoad } from "../../../redux/actions/userActions"
 import {useAlert} from "react-alert"
 import { useHistory } from "react-router-dom"
-import Loader from "../../../component/loader/Loader"
+// import Loader from "../../../component/loader/Loader"
 
 const UpdateProfile = () => {
     const {user, isAuthenticated} = useSelector(state=>state.userRegister)
-    const { loading, success, error, updated } = useSelector(state=>state.profileUpdated)
+    const { loading, success, error } = useSelector(state=>state.profileUpdated)
 
     const alert = useAlert()
     const dispatch = useDispatch()
@@ -30,7 +30,7 @@ const UpdateProfile = () => {
         else{
             setProfileAvatar(details.avatar)
         }
-    },[user.avatar, profileAvatarConvert, profileAvatar])
+    },[user.avatar, profileAvatarConvert, profileAvatar, details.avatar])
 
 
     const changeUserDetailsHandle = (e) => {
@@ -80,7 +80,7 @@ const UpdateProfile = () => {
             dispatch(userLoad())
         }
 
-    },[success, loading])
+    },[success, loading, alert, dispatch, error, history])
 
     return (
         <>

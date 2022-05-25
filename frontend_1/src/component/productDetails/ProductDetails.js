@@ -21,8 +21,8 @@ const ProductDetails = () => {
     const alert = useAlert()
 
     const data = useSelector(det=>det.productDetails)
-    const {success:itemQuantitySuccess, error:itemQuantityError, loading:itemQuantityLoading, cartItems} = useSelector(item=>item.cart)
-    const {success :reviewSuccess, error:reviewError, loading : reviewLoading} = useSelector(item=>item.review)
+    const {success:itemQuantitySuccess, error:itemQuantityError} = useSelector(item=>item.cart)
+    const {success :reviewSuccess} = useSelector(item=>item.review)
 
 
 
@@ -35,12 +35,12 @@ const ProductDetails = () => {
 
     const cartQuantity = (e) =>{
         
-        if(e=="+"){
+        if(e==="+"){
             if(quantity < data.product.stock){
             setQuantity(quantity+1)
             }
         }
-        if(e=="-"){
+        if(e==="-"){
             if(quantity > 1){
             setQuantity(quantity-1)
             }
@@ -69,7 +69,7 @@ const ProductDetails = () => {
         if(itemQuantityError){
             alert.error("Unable to review , something went wrong !",{position:'top right'})
         }
-    },[itemQuantitySuccess, itemQuantityError, reviewSuccess, itemQuantityError])
+    },[itemQuantitySuccess, itemQuantityError, reviewSuccess, itemQuantityError, alert])
 
     const [open, setOpen] = useState(false)
 

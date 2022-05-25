@@ -3,14 +3,14 @@ import './App.css';
 import Footer from './component/layout/footer/Footer';
 import Header from "./component/layout/header/Header"
 import Social from './component/layout/socialLinks/Socials';
-import { BrowserRouter, Switch, Route, useHistory } from "react-router-dom"
+import { BrowserRouter, Switch, Route } from "react-router-dom"
 import LogReg from './pages/login_registration/LogReg';
 import Cart from './pages/cart/cart';
 import Home from './pages/home/Home';
 import ProductDetails from "./component/productDetails/ProductDetails"
 import Products from "./pages/products/Products"
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { userLoad } from './redux/actions/userActions';
 import Dashboard from "./component/dashboard/Dashboard"
 import store from "./redux/store"
@@ -44,7 +44,7 @@ function App() {
   const auth = useSelector(state => state.userRegister)
   // const auth = useSelector(state => state.userRegister)
 
-  const { loading, success, updated } = useSelector(state => state.profileUpdated)
+  // const { loading, success, updated } = useSelector(state => state.profileUpdated)
   const changePasswordResponse = useSelector(state => state.changePassword)
 
   // const [stripeApiKey, setStripeApiKey] = useState("") // ye publishable api key yaha se payment route ko pass karenge stripe se Element import kar ke Eelement ke tag ke andar payment route ko rakh ke
@@ -96,7 +96,7 @@ function App() {
     if (changePasswordResponse.success) {
       alert.success("Password changed successfully !")
     }
-  }, [changePasswordResponse.success])
+  }, [changePasswordResponse.success, alert])
 
   const [auth1, setAuth1] = useState(true)
   const [auth2, setAuth2] = useState(false)

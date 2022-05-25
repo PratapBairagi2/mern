@@ -1,20 +1,20 @@
 
-import order from "./rani.jpg"
+// import order from "./rani.jpg"
 import { useEffect, useState } from "react"
-import { useSelector } from "react-redux"
+// import { useSelector } from "react-redux"
 import ProgressStep from "../progressStep/ProgressStep"
 import { useHistory } from "react-router-dom"
 import "./orderConfirm.css"
 
 const OrderConfirm = () => {
 
-    const response = useSelector(state=>state.cart)
+    // const response = useSelector(state=>state.cart)
     const history = useHistory()
     // const storedCartItems = localStorage.getItem("cartItems")
     const storedOrderItems = sessionStorage.getItem("orderItems")
 
     const storedShippingInfo = localStorage.getItem("shippingInfo")
-    const [saveOrderItems, setSaveOrderItems] = useState([])
+    // const [saveOrderItems, setSaveOrderItems] = useState([])
     
 
 

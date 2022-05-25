@@ -46,7 +46,7 @@ const ResetPassword = ({history}) => {
         if(error){
             alert.error(error)
         }
-    },[loading, error, success])
+    },[loading, error, success, alert])
 
    const changeUserDetailsHandle = (e) =>{
     const {name, value} = e.target

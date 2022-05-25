@@ -1,6 +1,6 @@
-import { Country, State, City } from "country-state-city"
+import { Country, State } from "country-state-city"
 import { useEffect, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { shippingAddressAction } from "../../../redux/actions/cartAction"
 import { useHistory } from "react-router-dom"
 import ProgressStep from "../progressStep/ProgressStep"

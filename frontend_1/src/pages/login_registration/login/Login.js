@@ -10,7 +10,7 @@ const LoginUser = () => {
     const alert = useAlert()
 
     const dispatch = useDispatch()
-    const {error, loading, success, loggedUserCall, loginUserCall, isAuthenticated, user} = useSelector(user=>user.userRegister)
+    const {error, success, loggedUserCall, loginUserCall, isAuthenticated, user} = useSelector(user=>user.userRegister)
     const [loginUserDetails, setLoginUserDetails] = useState({
         email:"",
         password:""
@@ -39,7 +39,7 @@ const LoginUser = () => {
             // navigate("/dashboard")
         }
     
-    },[error, user, isAuthenticated, loginUserCall, loggedUserCall, success])
+    },[error, user, isAuthenticated, loginUserCall, loggedUserCall, success, alert])
 
     return (
     <>

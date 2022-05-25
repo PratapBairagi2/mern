@@ -13,14 +13,14 @@ const MyOrders = () => {
 
     useEffect(() => {
         dispatch(myOrdersAction())
-    }, [])
+    }, [dispatch])
 
     useEffect(() => {
         if (error) {
             alert.error(error)
             dispatch(cleareError())
         }
-    }, [error, loading, success])
+    }, [error, loading, success, alert, dispatch])
 
     return (
         <>  {loading ? <Loader /> :

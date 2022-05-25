@@ -1,6 +1,5 @@
 
 import { useState, useEffect } from "react";
-import user from "./user.png"
 import { useDispatch, useSelector } from "react-redux";
 import { registerNewUser } from "../../../redux/actions/userActions";
 import {useAlert} from "react-alert"
@@ -11,7 +10,7 @@ const RegisterUser = () => {
     const alert = useAlert()
 
     const dispatch = useDispatch()
-    const {error, loading, isAuthenticated, success, user, registerUserCall} = useSelector(userState => userState.userRegister)
+    const {error, user, registerUserCall} = useSelector(userState => userState.userRegister)
     const [userAvatar, setUserAvatar] = useState(deafultUserAvatar)
 
     const [registerUser, setRegisterUser] = useState({
@@ -59,7 +58,7 @@ const RegisterUser = () => {
             alert.success(`${user.name} : Logged In Successful !`, {position:"top right"})
         }
     }
-    },[error, user])
+    },[error, user, alert, registerUserCall])
 
     return (
     <>

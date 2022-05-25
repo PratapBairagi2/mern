@@ -1,6 +1,4 @@
-import axios from "axios"
 import { PRODUCTS_GET_FAIL, PRODUCTS_GET_REQUEST, PRODUCTS_GET_SUCCESS, CLEAR_ERROR, PRODUCT_GET_REQUEST, PRODUCT_GET_SUCCESS, PRODUCT_GET_FAIL, ADMIN_PRODUCTS_GET_REQUEST, ADMIN_PRODUCTS_GET_SUCCESS, ADMIN_PRODUCTS_GET_FAIL, ADMIN_DELETE_PRODUCT_FAIL, ADMIN_DELETE_PRODUCT_REQUEST, ADMIN_DELETE_PRODUCT_SUCCESS, CREATE_NEW_PRODUCT_REQUEST, CREATE_NEW_PRODUCT_SUCCESS, CREATE_NEW_PRODUCT_FAIL, RESET_SUCCESS, UPDATE_PRODUCT_REQUEST, UPDATE_PRODUCT_SUCCESS, UPDATE_PRODUCT_FAIL } from "../types/productTypes"
-
 
 
 export const ProductReducer = (
@@ -44,7 +42,6 @@ export const ProductReducer = (
                 ...state,
                 loading: false,
                 error: action.payload
-                // success: action.payload?.success
             }
 
         case CLEAR_ERROR:

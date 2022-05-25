@@ -4,12 +4,12 @@ import { ADMIN_DELETE_PRODUCT_FAIL, ADMIN_DELETE_PRODUCT_REQUEST, ADMIN_DELETE_P
 // get all products
 export const getProducts = (keyword, currtentPage, range, category, ratings) => async (dispatch) =>{
 
-    let keywordd = keyword ?.keyword || ""
+    let keywordd =keyword ?.keyword || ""
     let currtentPagee = currtentPage || 1
-    let price1 = range? range.priceStart : 0
-    let price2 = range? range.priceEnd : 99999
-    let cat = category || ""
-    let rating = ratings || 0
+    let price1 =range? range.priceStart : 0
+    let price2 =range? range.priceEnd : 99999
+    let cat =category || ""
+    let rating =ratings || 0
 
     try {
         dispatch({

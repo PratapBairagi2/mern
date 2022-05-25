@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from "react";
-import ProgressStep from "../progressStep/ProgressStep";
+import { useEffect, useRef } from "react";
+// import ProgressStep from "../progressStep/ProgressStep";
 import "./paymentProcess.css"
 import {CardNumberElement, CardExpiryElement, CardCvcElement, useElements, useStripe} from "@stripe/react-stripe-js"
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { useAlert } from "react-alert";
-import Loader from "../../../component/loader/Loader";
+// import Loader from "../../../component/loader/Loader";
 import { orederCreateAction } from "../../../redux/actions/orderAction";
 import { useHistory } from "react-router-dom";
 const PaymentProcess = () => {
@@ -19,7 +19,7 @@ const PaymentProcess = () => {
     const {shippingInfo} = useSelector(state=>state.cart)
     const dispatch = useDispatch()
     const history = useHistory()
-    const {order, error, success, loading} = useSelector(state=> state.order)
+    const { error, success, loading} = useSelector(state=> state.order)
 
    
 
@@ -50,7 +50,7 @@ const PaymentProcess = () => {
         if(error){
 
         }
-    },[error,dispatch, success, loading])
+    },[error,dispatch, success, loading,history])
 
 
     const submitPayment = async (e) =>{

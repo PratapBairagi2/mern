@@ -20,12 +20,12 @@ const Summary = () => {
 
 
     const dispatch = useDispatch()
-    const { loading, success, error, orders } = useSelector(state => state.getAdminOrders)
+    // const { loading, success, error, orders } = useSelector(state => state.getAdminOrders)
 
     useEffect(() => {
         dispatch(getAdminOrdersAction())
         dispatch(adminGetAllProducts())
-    }, [])
+    }, [dispatch])
 
     const list = document.querySelectorAll(".navigation li");
     const adminContents = document.querySelectorAll(".admin-contents .AdminContent")
