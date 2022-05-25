@@ -87,7 +87,7 @@ const UpdateProfile = () => {
         {isAuthenticated && user &&
         <>  
         <MetaData title={`${user.name} UPDATE YOUR PROFILE : ECOMMERCE`}/>
-            <form onSubmit={formSubmitHandler} style={{ maxWidth: "500px", width: "100%", margin: "0 auto", minHeight:"85vh" }}>
+            <form onSubmit={formSubmitHandler} style={{ maxWidth: "500px", width: "94%", margin: "0 auto", minHeight:"85vh", marginTop:"13vh", }}>
                     <h2 style={{width:"max-content", textAlign:"center", margin:"1rem auto"}}>Edit Profile</h2>
                 <div className="form-group">
                     <label htmlFor="registerName" className="px-3 py-2 mb-1" style={{ backgroundColor: "rgb(230, 229, 229", width: "100%", borderRadius: "3px" }}>Name</label>

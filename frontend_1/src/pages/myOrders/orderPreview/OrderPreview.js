@@ -20,7 +20,7 @@ const OrderPreview = () => {
     <>
     {loading ? <Loader/> : 
        success && <div className="container-fluid">
-            <div style={{display:"flex", flexDirection:"column", padding:"2% 4%", maxWidth:"700px", margin:"0 auto"}}>
+            <div style={{display:"flex", flexDirection:"column", padding:"2% 4%", maxWidth:"700px", margin:"0 auto", marginTop:"11vh"}}>
                                 <div style={{width:"max-content", margin:"0 auto", fontSize:"140%", borderBottom:"2px solid grey", fontWeight:"700"}}>Order Preview</div>
                 <div style={{color:"red", fontWeight:"600", fontSize:"120%", wordBreak:"break-all",  padding:"0"}}>#{order._id}</div>
 

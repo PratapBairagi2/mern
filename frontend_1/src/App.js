@@ -118,9 +118,7 @@ function App() {
         <Header userDetails={{ error: auth.error, isAuthenticated: auth.isAuthenticated, loading: auth.loading, success: auth.success, user: auth.user }} />
         <Social />
 
-        {stripeApiKey && (<Elements stripe={loadStripe(stripeApiKey)}>
-            <ProtectedRoute exact path="/payment/process" auth={auth2} component={PaymentProcess} />
-          </Elements>)}
+
 
         <Switch>
           <Route exact path="/" component={Home} />
@@ -128,8 +126,8 @@ function App() {
           <Route exact path="/product/:id" component={ProductDetails} />
           <Route exact path="/products/:keyword" component={Products} />
           <Route exact path="/products" component={Products} />
-          <Route exact path="/contact" component={Contact}/>
-          <Route exact path="/about" component={ About } />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/about" component={About} />
 
 
 
@@ -147,9 +145,13 @@ function App() {
           <ProtectedRoute exact path="/product/update/:id" auth={auth2} component={UpdateProduct} />
           <ProtectedRoute exact path="/admin/order/status/:id" auth={auth2} component={Orderprocess} />
           <ProtectedRoute exact path="/admin/user/update/:id" auth={auth2} component={UpdateUserByAdmin} />
-          <ProtectedRoute exact path="/admin" auth={auth2} component={AdminDashboard}/>
+          <ProtectedRoute exact path="/admin" auth={auth2} component={AdminDashboard} />
 
-
+          {stripeApiKey && (
+            <Elements stripe={loadStripe(stripeApiKey)}>
+              <ProtectedRoute exact path="/payment/process" auth={auth2} component={PaymentProcess} />
+            </Elements>
+          )}
 
           <Route path="*" exact component={PageNotFound} />
 

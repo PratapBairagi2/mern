@@ -26,7 +26,7 @@ const MyOrders = () => {
         <>  {loading ? <Loader /> :
             <div className="container-fluid" style={{ minHeight: "85vh", width: "100%", marginTop:"10vh", padding: "2% 4%", overflow:"auto" }}>
                 <h4 style={{ width: "max-content", margin: "1% auto", borderBottom: "1px solid grey" }}>My Orders</h4>
-                <div style={{ width: "100%",minWidth:"500px", height: "100%", display: "flex" }}>
+                <div style={{ width: "100%",minWidth:"500px", height: "98%", margin:"1% auto", display: "flex" }}>
                     <div className="col">
                         <table className="table table-hover">
                             <thead>

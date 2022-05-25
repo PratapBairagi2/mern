@@ -4,7 +4,6 @@ import axios from "axios"
 
 // register new user
 export const registerNewUser = (registerUser) => async (dispatch) => {
-    console.log(registerUser)
 
     try {
         dispatch({
@@ -63,7 +62,6 @@ export const loginUser = (loginUserDetails) => async (dispatch) => {
         }
 
     } catch (error) {
-        console.log(error)
         dispatch({
             type: USER_LOGIN_FAIL,
             payload: error.response.data.error
@@ -135,8 +133,6 @@ export const updateProfileAction = (updated) => async (dispatch) => {
             })
         }
     } catch (error) {
-
-        console.log(error)
         dispatch({
             type: PROFILE_UPDATE_FAIL,
             payload: error.response.data.error
@@ -246,7 +242,6 @@ export const getUserListAction = (d) => async (dispatch) =>{
         })
 
     } catch (error) {
-        console.log(error)
         dispatch({
             type : GET_USERS_LIST_FAIL,
             payload : error.response.data.error
@@ -277,7 +272,6 @@ export const getUserListAction = (d) => async (dispatch) =>{
 
 //  get single user -- admin
 export const getAdminUserAction = (id) => async(dispatch) =>{
-    console.log(id)
     try {
         dispatch({
             type : GET_ADMIN_USER_REQUEST
@@ -300,7 +294,6 @@ export const getAdminUserAction = (id) => async(dispatch) =>{
 
 // update user/user role -- admin
 export const updateUserByAdminAction = (id, user) => async (dispatch) =>{
-    console.log(id, "/////", user)
     try {
         dispatch({
             type : UPDATE_USER_ADMIN_REQUEST

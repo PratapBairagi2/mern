@@ -1,6 +1,8 @@
 // import { useEffect } from "react"
-// import { useDispatch, useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { useEffect } from "react"
 import { NavLink } from "react-router-dom"
+import { getProducts } from "../../../redux/actions/productActions"
 // import { removeFromCartAction } from "../../../redux/actions/cartAction"
 
 export const PaymentSuccess = () =>{
@@ -16,6 +18,11 @@ export const PaymentSuccess = () =>{
     //         }
     //     }
     // },[order, storedCartItems])
+    const dispatch = useDispatch()
+
+    useEffect(()=>{
+        dispatch(getProducts())
+    },[dispatch])
 
     return(
         <>

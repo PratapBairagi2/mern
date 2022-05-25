@@ -83,7 +83,6 @@ export const cartQuantityChangeAction = (id, quantity) => async(dispatch, getSta
 
 // shipping address 
 export const shippingAddressAction = (shippingInfo) => async (dispatch, getState) =>{
-    console.log(shippingInfo)
     
     try {
         dispatch({

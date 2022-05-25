@@ -26,7 +26,6 @@ export const getProducts = (keyword, currtentPage, range, category, ratings) => 
             payload : data
         })
     } catch (error) {
-        console.log("errrrr", error.response.data.error)
         dispatch({
             type : PRODUCTS_GET_FAIL,
             payload : error.response.data.error
@@ -98,7 +97,6 @@ export const createNewProductAction = (newProduct) => async (dispatch)=>{
             payload : data
         })
     } catch (error) {
-        console.log(error)
         dispatch({
             type : CREATE_NEW_PRODUCT_FAIL,
             payload : error.response.data.error

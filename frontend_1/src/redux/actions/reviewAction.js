@@ -2,7 +2,6 @@ import axios from "axios"
 import { CLEAR_ERROR, CREATE_REVIEW_FAIL, CREATE_REVIEW_REQUEST, CREATE_REVIEW_SUCCESS, DELETE_REVIEW_FAIL, DELETE_REVIEW_REQUEST, DELETE_REVIEW_SUCCESS, GET_ALL_REVIEWS_OF_ALL_PRODUCTS_FAIL, GET_ALL_REVIEWS_OF_ALL_PRODUCTS_REQUEST, GET_ALL_REVIEWS_OF_ALL_PRODUCTS_SUCCESS, RESET_SUCCESS } from "../types/reviewTypes"
 
 export const reviewCreateAction = (review) => async(dispatch) =>{
-    console.log(review)
     try {
         dispatch({
             type : CREATE_REVIEW_REQUEST
@@ -29,7 +28,6 @@ export const reviewCreateAction = (review) => async(dispatch) =>{
 
 // get all reviews of all products -- admin
 export const GetAllReviewOfAllProductsAction = (productId, reviewId) => async (dispatch) =>{
-    console.log(productId)
     try {
         dispatch({
             type : GET_ALL_REVIEWS_OF_ALL_PRODUCTS_REQUEST
@@ -37,14 +35,11 @@ export const GetAllReviewOfAllProductsAction = (productId, reviewId) => async (d
 
         const {data} = await axios.get(`/api/admin/reviews?id=${reviewId}&productId=${productId}`)
 
-        console.log(data)
-
         dispatch({
             type : GET_ALL_REVIEWS_OF_ALL_PRODUCTS_SUCCESS,
             payload : data
         })
     } catch (error) {
-        console.log(error)
         dispatch({
             type : GET_ALL_REVIEWS_OF_ALL_PRODUCTS_FAIL,
             payload : error.response.data.error
