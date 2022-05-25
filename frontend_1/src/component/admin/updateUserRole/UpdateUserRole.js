@@ -39,7 +39,7 @@ const UpdateUserByAdmin = () => {
                 oldAvatar : user.avatar,
             })
         }
-    },[userSuccess, userError, user])
+    },[userSuccess, userError, user, details])
 
     // show success or error message after updated user
     useEffect(()=>{

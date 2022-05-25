@@ -69,7 +69,7 @@ const ProductDetails = () => {
         if(itemQuantityError){
             alert.error("Unable to review , something went wrong !",{position:'top right'})
         }
-    },[itemQuantitySuccess, itemQuantityError, reviewSuccess, itemQuantityError, alert])
+    },[itemQuantitySuccess, itemQuantityError, reviewSuccess, itemQuantityError, alert, itemQuantityError])
 
     const [open, setOpen] = useState(false)
 
