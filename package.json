@@ -6,12 +6,12 @@
     "node": "17.8.0",
     "npm" : "8.6.0"
   },
-  "main": "backend_practice_2/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backend_practice_2/index.js",
-    "dev": "nodemon backend_practice_2/index.js",
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false && npm install --prefix frontend_1 && npm run build --prefix frontend_1"
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false && cd frontend_1 && npm install frontend_1 && npm run build"
 
   },
   "author": "",

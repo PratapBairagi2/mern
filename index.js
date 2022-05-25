@@ -23,9 +23,9 @@ const app = express()
 // isiliye yaha condition ke sath isko rakhenge
 
 if(process.env.NODE_ENV==="PRODUCTION"){
-    require("dotenv").config({path : "backend_practice_2/config/.env"})
+    require("dotenv").config({path : "./config/.env"})
 }else{
-    require("dotenv").config({path : "backend_practice_2/config/.env"})
+    require("dotenv").config({path : "./config/.env"})
 }
 
 
@@ -37,6 +37,10 @@ app.use(express.urlencoded({extended:true.valueOf, limit:"25mb"})) // jab 1 se j
 app.use(cookieParser())
 app.use(express.urlencoded({extended:"true"}))
 app.use(fileUpload()) // for image upload, packedge - express-fileupload , video time : 08:04:12 cloudinary
+
+
+// mongodb connection
+MONGODB_CONNECTION(process.env.MONGO_DB_CONNEXTION_URL)
 
 // routes
 app.use("/api", productRoute)
@@ -51,10 +55,13 @@ app.use("/api", paymentRoute)
 //     res.sendFile(path.resolve(__dirname,"../frontend_1/build/index.html")) // sending one by one file to ui/ frontend
 // })
 
-app.use(express.static(path.join(__dirname, "../frontend_1/build")))
+if(process.env.NODE_ENV)
+app.use(express.static("frontend_1/build"))
+
 app.get("*",(req, res)=>{
-    res.sendFile(path.resolve(__dirname, "../frontend_1/build/index.html"))
-})
+    res.sendFile(path.join(__dirname, "frontend_1","build","index.html"))
+}
+)
 
 ///// ye build file ka path yaha set karne ke baad,
 ///// frontend se build folder ko delete kar denge
@@ -62,10 +69,6 @@ app.get("*",(req, res)=>{
 ///// tab heroku ke banaye build folder se ye upar ka path ayega
 
 app.use(globalErrorHandlerMiddleware)
-
-// mongodb connection
-MONGODB_CONNECTION(process.env.MONGO_DB_CONNEXTION_URL)
-
 
 app.listen(process.env.PORT,()=>{
     console.log(`server started on http://localhost:${process.env.PORT}`)
