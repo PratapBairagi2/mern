@@ -11,7 +11,7 @@ const UpdateProduct = () => {
     const dispatch = useDispatch()
     const alert = useAlert()
     const history = useHistory()
-    const { product } = useSelector(state => state.productDetails)
+    const { loading, success, error, product } = useSelector(state => state.productDetails)
     const {loading : updateProductLoading , success : updateProductSuccess , error : updateProductError} = useSelector(state=> state.deleteProduct)
 
     const [productDetails, setProductDetails] = useState({
@@ -37,7 +37,7 @@ const UpdateProduct = () => {
             oldImages : product.images,
             images: []
         })
-    }, [product, productDetails])
+    }, [product])
 
     //  remove image from array
     const removeImageFromArrayHandler = (removeImage, e) =>{
@@ -77,7 +77,7 @@ const UpdateProduct = () => {
 
     useEffect(() => {
         dispatch(getProductDetails(id))
-    }, [dispatch, id])
+    }, [dispatch])
 
     // get all data after deleting/update product
     useEffect(()=>{
@@ -93,7 +93,7 @@ const UpdateProduct = () => {
         if(updateProductError){
             alert.error(updateProductError)
         }
-    },[ updateProductLoading , updateProductSuccess , updateProductError, alert, dispatch, history])
+    },[ updateProductLoading , updateProductSuccess , updateProductError])
 
        // categories 
        const categories = [

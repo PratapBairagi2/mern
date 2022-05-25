@@ -1,6 +1,6 @@
 
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getAdminOrdersAction } from "../../../redux/actions/orderAction";
 import { adminGetAllProducts } from "../../../redux/actions/productActions";
 import "./adminDashboard.css"
@@ -20,12 +20,12 @@ const Summary = () => {
 
 
     const dispatch = useDispatch()
-    // const { loading, success, error, orders } = useSelector(state => state.getAdminOrders)
+    const { loading, success, error, orders } = useSelector(state => state.getAdminOrders)
 
     useEffect(() => {
         dispatch(getAdminOrdersAction())
         dispatch(adminGetAllProducts())
-    }, [dispatch])
+    }, [])
 
     const list = document.querySelectorAll(".navigation li");
     const adminContents = document.querySelectorAll(".admin-contents .AdminContent")

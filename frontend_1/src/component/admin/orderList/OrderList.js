@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useAlert } from "react-alert";
@@ -9,7 +9,7 @@ const OrderList = () => {
     const dispatch = useDispatch()
     const history = useHistory()
     const alert = useAlert()
-    const {loading, orders} = useSelector(state=>state.getAdminOrders)
+    const {loading, success, error, orders} = useSelector(state=>state.getAdminOrders)
     const {loading : deleteOrderLoading, success : deleteOrderSuccess, error : deleteOrderError} = useSelector(state=>state.deleteOrderAdmin)
 
 
@@ -24,7 +24,7 @@ const OrderList = () => {
         if(deleteOrderError){
             alert.success(deleteOrderError)
         }
-    },[dispatch, deleteOrderLoading, deleteOrderSuccess, deleteOrderError, alert])
+    },[dispatch, deleteOrderLoading, deleteOrderSuccess, deleteOrderError])
 
     // 
     const updateOrderStatus = (id) => {
@@ -38,7 +38,7 @@ const OrderList = () => {
     return (
         <>
             <div style={{ height: "94vh", overflowX: "hidden", overflowY: "auto", width: "100%", padding: "2%", display: "flex", flexWrap: "wrap" }}>
-                <div style={{ display: "flex", overflow: "hidden", flexWrap: "wrap", width: "max-content", minWidth: "100%", justifyContent: "space-evenly" }}>
+                <div style={{ display: "flex", overflow: "hidden", flexWrap: "wrap", flexWrap: "wrap", width: "max-content", minWidth: "100%", justifyContent: "space-evenly" }}>
 
                     <div style={{ width: "max-content", minWidth: "100%", overflow: "auto" }}>
                         <table className="table table-responsive" style={{ width: "100%", boxShadow: "0 0 2px grey" }} >

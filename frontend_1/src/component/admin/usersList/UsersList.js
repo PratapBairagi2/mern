@@ -2,8 +2,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clearAllError, deleteAdminUserAction, getUserListAction, reset_success } from "../../../redux/actions/userActions";
-// import Loader from "../../loader/Loader"
-import { useHistory } from "react-router-dom"
+import Loader from "../../loader/Loader"
+import { NavLink, useHistory } from "react-router-dom"
 import { useAlert } from "react-alert";
 import { adminGetAllProducts } from "../../../redux/actions/productActions";
 
@@ -13,8 +13,8 @@ const UsersList = () => {
     const dispatch = useDispatch()
     const history = useHistory()
     const alert = useAlert()
-    const { success, users } = useSelector(state => state.usersList)
-    const { success : deleteUserSuccess, error: deleteUserError } = useSelector(state => state.deleteAdminUser)
+    const { success, loading, users, error } = useSelector(state => state.usersList)
+    const { success : deleteUserSuccess, loading: deleteUserLoading, error: deleteUserError } = useSelector(state => state.deleteAdminUser)
 
     useEffect(() => {
         dispatch(getUserListAction())
@@ -30,7 +30,7 @@ const UsersList = () => {
             alert.error(deleteUserError)
             dispatch(clearAllError())
         }
-    }, [dispatch, deleteUserSuccess, deleteUserError, alert, history])
+    }, [dispatch, deleteUserSuccess, deleteUserError])
 
 
     //  delete user

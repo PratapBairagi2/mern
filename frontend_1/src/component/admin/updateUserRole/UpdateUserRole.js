@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getAdminUserAction, reset_success, updateUserByAdminAction } from "../../../redux/actions/userActions"
-import { useHistory } from "react-router-dom"
+import { useHistory, useParams } from "react-router-dom"
 import {useAlert} from "react-alert"
 
 const UpdateUserByAdmin = () => {
@@ -12,8 +12,8 @@ const UpdateUserByAdmin = () => {
     const dispatch = useDispatch()
     const alert = useAlert()
     const history = useHistory()
-    const { success : userSuccess, error : userError, user } = useSelector(state=> state.getAdminSingleUser)
-    const { success : userUpdateSuccess , error : userUpdateError, user :updatedUser } = useSelector(state=> state.updateUserByAdmin)
+    const {loading : userLoading, success : userSuccess, error : userError, user } = useSelector(state=> state.getAdminSingleUser)
+    const {loading : userUpdateLoading, success : userUpdateSuccess , error : userUpdateError, user :updatedUser } = useSelector(state=> state.updateUserByAdmin)
 
 
     // const [profileAvatar, setProfileAvatar] = useState([])
@@ -39,7 +39,7 @@ const UpdateUserByAdmin = () => {
                 oldAvatar : user.avatar,
             })
         }
-    },[userSuccess, userError, user, details])
+    },[userSuccess, userError, user])
 
     // show success or error message after updated user
     useEffect(()=>{
@@ -48,7 +48,7 @@ const UpdateUserByAdmin = () => {
             dispatch(reset_success())
             history.push("/profile")
         }
-    },[userUpdateSuccess, userUpdateError, updatedUser,alert, dispatch, history])
+    },[userUpdateSuccess, userUpdateError, updatedUser])
 
 
     // submit update details
