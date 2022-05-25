@@ -15,7 +15,7 @@ const {
     changePassword } = require("../controllers/userController")
 
 const authorizationUser = require("../middlewares/userAuth")
-const userRole = require("../backend_practice_2/middlewares/userRole")
+const userRole = require("../middlewares/userRole")
 
 const userRoute = express.Router()
 

@@ -1,7 +1,7 @@
 const express = require("express")
 const { createOrder, updateOrderStatus, getSingleOrderByUser, getAllOrdersByUser, getAllOrdersByAdmin, getSingleOrderByAdmin, deleteOrderByAdmin } = require("../controllers/orderController")
 const authorizationUser = require("../middlewares/userAuth")
-const userRole = require("../backend_practice_2/middlewares/userRole")
+const userRole = require("../middlewares/userRole")
 
 const orderRoute = express.Router()
 

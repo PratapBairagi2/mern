@@ -1,7 +1,7 @@
 
 const dotenv = require("dotenv")
 const express = require("express")
-const { getPublishApiKey, orderPayment } = require("../backend_practice_2/controllers/paymentController")
+const { getPublishApiKey, orderPayment } = require("../controllers/paymentController")
 const authorizationUser = require("../middlewares/userAuth")
 
 dotenv.config({path:"../config/.env"})

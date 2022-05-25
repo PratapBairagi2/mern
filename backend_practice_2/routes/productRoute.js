@@ -10,7 +10,7 @@ const { updateProduct } = require("../controllers/productControllers.js")
 const { createProduct } = require("../controllers/productControllers.js")
 const {getSingleProductByUser} = require("../controllers/productControllers.js")
 const authorizationUser = require("../middlewares/userAuth")
-const userRole = require("../backend_practice_2/middlewares/userRole")
+const userRole = require("../middlewares/userRole")
 
 const productRoute = express.Router()
 
