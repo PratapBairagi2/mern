@@ -143,7 +143,7 @@ const Cart = ({history}) => {
                 <div style={{ textAlign:"right", width:"100%", paddingRight:"8%"}}>Price</div>
                 </div>
             </div>
-            <div className="container-fuild p-1 px-2 cartItems_container"style={{display:"flex", flexDirection:"column",alignItems:"center", height:"max-content", width:"100%", height:"61.8vh", overflow:"auto"}} >
+            <div className="container-fuild p-1 px-2 cartItems_container"style={{display:"flex", flexDirection:"column",alignItems:"center", minWidth:"280px", height:"max-content", width:"100%", height:"61.8vh", overflow:"auto"}} >
             {cartItems && 
            cartItems.map((item,i)=> { 
                return <div key={item.product} className="row p-1 my-2" style={{maxWidth:"900px", width:"100%", display:"flex", flexDirection:"row",height:"max-content", boxShadow:"0 0 2px grey"}}>
