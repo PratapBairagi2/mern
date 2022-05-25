@@ -25,7 +25,7 @@ $ npm audit fix --force
 
 <!-- frontend libraries -->
 
-"axios": "^0.27.2",
+    "axios": "^0.27.2",
     "bootstrap": "^5.1.3",
     "country-state-city": "^3.0.1",
     "overlay-navbar": "^1.2.3",
