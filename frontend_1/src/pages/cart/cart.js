@@ -62,7 +62,7 @@ const Cart = ({history}) => {
     const storedShippingInfo = localStorage.getItem("shippingInfo")
     const [saveOrderItems, setSaveOrderItems] = useState([])
     // const response = useSelector(state=>state.cart)
-    // const [carItems, setCartItems] = useState([])
+    const [carItems, setCartItems] = useState([])
 
     useEffect(() => {
         if (storedCartItems) {
