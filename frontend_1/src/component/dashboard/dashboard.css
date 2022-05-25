@@ -1,0 +1,11 @@
+
+
+.profileNameStrong, .profileEmailStrong, .profileCreatedStrong{
+    transform: translateY(45%);
+     color: red;
+    width: max-content;
+    padding: 0 3rem;
+    font-weight: 500;
+    background-color: whitesmoke;
+    margin-left: 1rem;
+}

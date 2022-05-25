@@ -1,0 +1,231 @@
+
+.cartItems_container::-webkit-scrollbar{
+    width: 2px;
+    height: 2px;
+    background-color: rgb(161, 161, 161);
+
+}
+.cartItems_container::-webkit-scrollbar-thumb{
+    background-color:white;
+}
+
+.cartDetailSubContainer_col1{
+    aspect-ratio:2/1;
+    text-align:left;
+    display:flex;
+    justify-content:center;
+    width: 100%;
+}
+.cartItemImage{
+    /* width: 45%; */
+    height: 100%;
+    aspect-ratio: 1/1.3;
+    min-height: 100px;
+    cursor: pointer;
+    color: rgb(57, 139, 255);
+}
+
+.cartDetailSubContainer{
+    width:50%;
+    display:flex;
+    height: 100%;
+    padding: 0;
+    flex-direction:column;
+    margin-left: 5px;
+}
+.cartProductName{
+    width:100%;
+    height:min-content;
+    color:tomato;
+    font-weight:600;
+    font-size:110%;
+    padding: 0;
+    margin-top: 2%;
+}
+.cartProductCategory{
+    width:max-content;
+    height:max-content;
+    font-size:70%;
+    background:rgb(179, 177, 177);
+    color:white;
+    font-weight:500;
+    text-transform:uppercase;
+    padding-bottom:1%;
+    border-radius:3px;
+    padding: 1px 8px;
+    margin-top: 3%;
+}
+.cartProductPrice{
+    width:max-content;
+    height:max-content;
+    color:tomato;
+    font-weight:700;
+    font-size:110%;
+    border-top:1px solid red; 
+    border-bottom:1px solid red;
+    margin-top: 8%;
+}
+
+.cartQuantitySubContainer{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-top:10%;
+}
+.cartQuantitySubContainer_button_group{
+    display:flex;
+    width:50%;
+    min-width:5rem;
+    flex:row;
+    justify-content:center;
+}
+.cartQuantitySubContainer_button_group button{
+    width: min-content;
+    padding: 2% 3%;
+    font-size: 80%;
+    width:30%;
+    min-width:1.5rem;
+    /* background-color: green; */
+    background-color: tomato;
+    border: none;
+    color: white;
+    font-size: 80%;
+}
+.cartQuantitySubContainer_button_group button:hover{
+    /* background-color: rgb(29, 198, 29); */
+    background:rgb(255, 54, 19);
+
+}
+.cartQuantitySubContainer_button_group button:first-child{
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+.cartQuantitySubContainer_button_group button:last-child{
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.removeFromCartBtn{
+    width:max-content;
+    min-width:4rem;
+    font-size:100%;
+    font-weight: 550;
+    padding:0 8px;
+    /* background-color: red; */
+    background:tomato;
+
+    color: white;
+    border: none;
+    margin-top: 5%;
+    border-radius: 4px;
+    line-height: 160%;
+}
+.removeFromCartBtn:hover{
+    /* background-color: rgb(172, 0, 0); */
+    background:rgb(255, 54, 19);
+
+}
+.cartQuantityField{
+    width:30%;
+    text-align:center;
+    border: 1px solid rgb(165, 165, 165);
+}
+
+.cartTotalPriceSubContainer_col3{
+    text-align:right;
+}
+.cartTotalPriceSubContainer_col3_subTotal{
+    width:max-content;
+    font-weight:600;
+    font-size: 100%;
+    float:right;
+    text-align:right;
+    padding-right:8%;
+    margin-top: 28%;
+}
+.checkoutBtn{
+    width:max-content;
+    border:2px solid transparent;
+    float:right;
+    padding:2px 30px;
+    font-weight:600;
+    font-size:120%;
+    background:tomato;
+    color:white;
+    border-radius: 20px;
+}
+
+.checkoutBtn:hover{
+    background:rgb(255, 54, 19);
+
+}
+
+@media only screen and (max-width: 560px){
+    .cartDetailSubContainer_col1{
+        padding: 0;
+        aspect-ratio: 1/.6;
+    }
+    .cartItemImage{
+        /* width: 45%; */
+        height: 100%;
+        aspect-ratio: 1/1.2;
+    }
+    .cartDetailSubContainer_col1 img{
+        width: 50%;
+        aspect-ratio: 2/1;
+    }
+    .cartProductName{
+        /* line-height: 100%; */
+        font-weight:500;
+        font-size:100%;
+        margin-top: 0;
+    }
+    .cartProductCategory{
+        font-size:60%;
+        padding: 1px 5px;
+        margin-top: 4px;
+    }
+    .cartProductPrice{
+        font-weight:600;
+        font-size:80%;
+        padding: 0;
+    }
+
+    .cartQuantitySubContainer_button_group button{
+        width: min-content;
+        padding: 2% 3%;
+        font-size: 80%;
+        width:30%;
+        min-width:1rem;
+        background-color: tomato;
+        border: none;
+        color: white;
+        font-size: 90%;
+    }
+    .removeFromCartBtn{
+        width:max-content;
+        min-width:3rem;
+        font-size:90%;
+        padding:0 6px;
+    }
+    .cartTotalPriceSubContainer_col3_subTotal{
+        width:max-content;
+        font-weight:600;
+        font-size: 80%;
+        padding-right:8%;
+        margin-top: 30%;
+    }
+    .checkoutBtn{
+        width:100%;
+        border:2px solid transparent;
+        float:right;
+        padding:2px 18px;
+        font-weight:600;
+        font-size:120%;
+        background:tomato;
+        color:white;
+        border-radius: 20px;
+    }
+    
+}

@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+}
+
+/*  remove arrow icon from input[number] field */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0 ;
+}
+
+::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
