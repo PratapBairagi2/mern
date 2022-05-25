@@ -37,7 +37,7 @@ const UpdateProduct = () => {
             oldImages : product.images,
             images: []
         })
-    }, [product])
+    }, [product, productDetails])
 
     //  remove image from array
     const removeImageFromArrayHandler = (removeImage, e) =>{

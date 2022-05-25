@@ -1,6 +1,6 @@
 
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getAdminOrdersAction } from "../../../redux/actions/orderAction";
 import { adminGetAllProducts } from "../../../redux/actions/productActions";
 import "./adminDashboard.css"

@@ -18,6 +18,10 @@ solve : $ git config core.autocrlf true
 
 5. git commit -m "changes commit"
 
+<!-- 8 vulnerabilities (6 moderate, 2 high) -->
+
+$ npm audit fix --force
+
 
 <!-- frontend libraries -->
 

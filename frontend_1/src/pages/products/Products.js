@@ -40,6 +40,7 @@ const Products = () => {
     const [currentPage, setCurrentPage] = useState(1)
     const [category, setCategory] = useState("")
     var [ratings, setRatings] = useState(0)
+    const [price, setPrice] = useState({ priceStart: Number(0), priceEnd: Number(99999) })
 
 
     const resultPerPage = data.success ? data.resultPerPage : 0
@@ -52,6 +53,7 @@ const Products = () => {
         setCurrentPage(e)
     }
 
+
     useEffect(() => {
         if (data.error) {
             alert.error(data.error)
@@ -62,7 +64,6 @@ const Products = () => {
     }, [dispatch, data.error, keyword, currentPage, category, ratings, alert, price])
 
 
-    const [price, setPrice] = useState({ priceStart: Number(0), priceEnd: Number(99999) })
 
     const priceChangeHandler = (e) => {
         const { name, value } = e.target

@@ -38,7 +38,7 @@ const OrderList = () => {
     return (
         <>
             <div style={{ height: "94vh", overflowX: "hidden", overflowY: "auto", width: "100%", padding: "2%", display: "flex", flexWrap: "wrap" }}>
-                <div style={{ display: "flex", overflow: "hidden", flexWrap: "wrap", flexWrap: "wrap", width: "max-content", minWidth: "100%", justifyContent: "space-evenly" }}>
+                <div style={{ display: "flex", overflow: "hidden", flexWrap: "wrap", width: "max-content", minWidth: "100%", justifyContent: "space-evenly" }}>
 
                     <div style={{ width: "max-content", minWidth: "100%", overflow: "auto" }}>
                         <table className="table table-responsive" style={{ width: "100%", boxShadow: "0 0 2px grey" }} >
